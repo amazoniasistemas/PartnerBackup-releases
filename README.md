@@ -59,9 +59,30 @@ A gestão é toda pelo **navegador**:
 
 ## Requisitos
 
-- **Windows** (Server ou Desktop) **64-bit**;
-- **SQL Server** (Express, Standard ou Enterprise) acessível pelo servidor;
+### Sistemas operacionais compatíveis
+
+Todos **64-bit**:
+
+| Sistema | Compatibilidade |
+|---|---|
+| Windows Server **2025**, **2022**, **2019**, **2016** | ✅ Homologado — inclui a edição **Essentials** |
+| Windows Server **23H2** | ✅ Compatível |
+| Windows **11** e Windows **10** (versão 1607 ou superior) | ✅ Funciona — embora o produto seja desenhado para servidor |
+| Windows Server **2012 R2**, **2012**, **2008 R2** e anteriores | ❌ Não compatível |
+| Windows **8.1**, **7** e anteriores | ❌ Não compatível |
+| Qualquer edição **32-bit** ou **ARM** | ❌ Não compatível |
+
+### Demais requisitos
+
+- **SQL Server** (Express, Standard ou Enterprise) acessível pelo servidor, com
+  **autenticação SQL** (usuário e senha) habilitada;
 - Privilégios de **administrador** para instalar;
+- Porta **TCP 5002** livre no servidor — é a porta do painel (não conflita com o
+  painel do Windows Server Essentials, que usa 80/443);
+- **Navegador moderno** (Chrome, Edge ou Firefox) para abrir o painel. O
+  **Internet Explorer não é suportado** — em servidores que só têm o IE, acesse o
+  painel de outro computador da rede em `http://<servidor>:5002/`;
+- Conexão com a internet com **TLS 1.2** (padrão em todos os sistemas da lista acima);
 - **Nenhum pré-requisito de runtime** — o instalador é *self-contained* (não é
   necessário instalar .NET nem qualquer outra dependência).
 
@@ -74,6 +95,22 @@ A gestão é toda pelo **navegador**:
 3. Execute o instalador e conclua o assistente;
 4. Ative a instalação com a **chave fornecida pela Amazônia Sistemas**;
 5. Acesse `http://localhost:5002/` no navegador do servidor para acompanhar.
+
+> [!TIP]
+> **O instalador não abre ao dar dois cliques?** Servidores com política de
+> segurança mais restritiva bloqueiam arquivos baixados pelo navegador — e o
+> fazem **sem exibir mensagem alguma**. Libere o arquivo e execute de novo, no
+> **PowerShell como administrador**:
+>
+> ```powershell
+> Unblock-File .\PartnerBackup-1.0.12.msi
+> ```
+>
+> Ou instale direto pela linha de comando, que não passa por esse bloqueio:
+>
+> ```powershell
+> msiexec /i .\PartnerBackup-1.0.12.msi
+> ```
 
 ---
 
