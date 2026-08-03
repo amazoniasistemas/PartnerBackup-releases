@@ -68,7 +68,8 @@ Todos **64-bit**:
 | Windows Server **2025**, **2022**, **2019**, **2016** | ✅ Homologado — inclui a edição **Essentials** |
 | Windows Server **23H2** | ✅ Compatível |
 | Windows **11** e Windows **10** (versão 1607 ou superior) | ✅ Funciona — embora o produto seja desenhado para servidor |
-| Windows Server **2012 R2** e **2012** | ⚠️ Funciona, mas **sem homologação** — sistemas fora do suporte da Microsoft desde out/2023. Para instalações novas, recomendamos 2016 ou superior |
+| Windows Server **2012 R2** | ⚠️ Funciona, mas **sem homologação** — sistema fora do suporte da Microsoft desde out/2023. Para instalações novas, recomendamos 2016 ou superior |
+| Windows Server **2012** | ⚠️ Sem testes — não recomendado |
 | Windows Server **2008 R2** e anteriores | ❌ Não compatível |
 | Windows **8.1**, **7** e anteriores | ❌ Não compatível |
 | Qualquer edição **32-bit** ou **ARM** | ❌ Não compatível |
